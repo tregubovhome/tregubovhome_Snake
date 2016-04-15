@@ -21,5 +21,10 @@ namespace tregubovhome_Snake
         {
 
         }
+
+        private void formGame_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
     }
 }

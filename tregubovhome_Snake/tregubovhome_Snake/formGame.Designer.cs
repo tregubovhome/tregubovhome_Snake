@@ -47,9 +47,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 455);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "formGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formGame";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formGame_FormClosed);
             this.Load += new System.EventHandler(this.formGame_Load);
             this.ResumeLayout(false);
 

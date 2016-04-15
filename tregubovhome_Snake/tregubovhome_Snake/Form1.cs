@@ -20,15 +20,13 @@ namespace tregubovhome_Snake
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
-            //MessageBox.Show("Тест");
         }
         private void buttonStartGame_Click(object sender, EventArgs e)
         {
-            this.Close();
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formGame());
-            //MessageBox.Show("Тест");
+            //this.Hide();// .Close();
+            formGame frm = new formGame();
+            frm.ShowDialog();
+            
         }
     }
 }
