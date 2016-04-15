@@ -24,7 +24,10 @@ namespace tregubovhome_Snake
         }
         private void buttonStartGame_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new formGame());
             //MessageBox.Show("Тест");
         }
     }

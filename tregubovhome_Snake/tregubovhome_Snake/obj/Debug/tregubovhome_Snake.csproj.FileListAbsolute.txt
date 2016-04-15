@@ -7,3 +7,4 @@ F:\Мои документы\Visual Studio 2013\Projects\tregubovhome_Snake\treg
 F:\Мои документы\Visual Studio 2013\Projects\tregubovhome_Snake\tregubovhome_Snake\tregubovhome_Snake\obj\Debug\tregubovhome_Snake.exe
 F:\Мои документы\Visual Studio 2013\Projects\tregubovhome_Snake\tregubovhome_Snake\tregubovhome_Snake\obj\Debug\tregubovhome_Snake.pdb
 F:\Мои документы\Visual Studio 2013\Projects\tregubovhome_Snake\tregubovhome_Snake\tregubovhome_Snake\obj\Debug\tregubovhome_Snake.Form1.resources
+F:\Мои документы\Visual Studio 2013\Projects\tregubovhome_Snake\tregubovhome_Snake\tregubovhome_Snake\obj\Debug\tregubovhome_Snake.formGame.resources
