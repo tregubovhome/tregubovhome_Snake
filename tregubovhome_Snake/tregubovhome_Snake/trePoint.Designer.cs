@@ -26,14 +26,13 @@
         /// Обязательный метод для поддержки конструктора - не изменяйте 
         /// содержимое данного метода при помощи редактора кода.
         /// </summary>
-        private void InitializeComponent(int x, int y, treType type)
+        private void InitializeComponent(System.Windows.Forms.Control ctrlField, int x, int y, treType type)
         {
             this.label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label
             // 
-
             this.label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label.Location = new System.Drawing.Point(0, 0);
@@ -49,6 +48,10 @@
             {
                 this.label.BackColor = System.Drawing.Color.Aqua;
             }
+            else if (type == treType.POISON)
+            {
+                this.label.BackColor = System.Drawing.Color.Red;
+            }
             // 
             // trePoint
             // 
@@ -57,9 +60,8 @@
             this.Controls.Add(this.label);
             this.Name = "trePoint";
             this.Size = new System.Drawing.Size(20, 20);
-            this.Location = new System.Drawing.Point(x, y);
+            this.Location = new System.Drawing.Point((x - 1) * 20 + ctrlField.Location.X, (y - 1) * 20 + ctrlField.Location.Y);
             this.ResumeLayout(false);
-
         }
 
         #endregion

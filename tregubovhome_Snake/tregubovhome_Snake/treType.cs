@@ -8,6 +8,7 @@ namespace tregubovhome_Snake
     public enum treType
     {
         BODY,
-        TARGET
+        TARGET,
+        POISON
     }
 }

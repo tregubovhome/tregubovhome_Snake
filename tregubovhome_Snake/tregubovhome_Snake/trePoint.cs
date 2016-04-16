@@ -25,8 +25,10 @@ namespace tregubovhome_Snake
         }
         public void Draw(Form frm)
         {
-            InitializeComponent(x, y, type);
+            InitializeComponent(frm.Controls.Find("labelField", true).First(), x, y, type);
             frm.Controls.Add(this);
+            this.BringToFront();
+            //this.UpdateZOrder();
         }
     }
 }

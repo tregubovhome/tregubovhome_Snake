@@ -18,11 +18,14 @@ namespace tregubovhome_Snake
         }
         private void buttonStart_Click(object sender, EventArgs e)
         {
-            trePoint p1 = new trePoint(20, 10, treType.BODY);
+            trePoint p1 = new trePoint(1, -1, treType.BODY);
             p1.Draw(this);
 
-            trePoint p2 = new trePoint(40, 40, treType.TARGET);
+            trePoint p2 = new trePoint(2, 2, treType.TARGET);
             p2.Draw(this);
+
+            trePoint p3 = new trePoint(1, 4, treType.POISON);
+            p3.Draw(this);
         }
     }
 }
