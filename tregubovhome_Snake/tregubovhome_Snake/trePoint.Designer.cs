@@ -49,6 +49,7 @@
             this.Controls.Add(this.label);
             this.Name = "trePoint";
             this.Size = new System.Drawing.Size(20, 20);
+            this.Location = new System.Drawing.Point(20, 20);
             this.ResumeLayout(false);
 
         }
