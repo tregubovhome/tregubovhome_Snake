@@ -26,21 +26,29 @@
         /// Обязательный метод для поддержки конструктора - не изменяйте 
         /// содержимое данного метода при помощи редактора кода.
         /// </summary>
-        private void InitializeComponent()//(int x, int y)
+        private void InitializeComponent(int x, int y, treType type)
         {
             this.label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label
             // 
-            this.label.BackColor = System.Drawing.Color.LimeGreen;
+
             this.label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label.Location = new System.Drawing.Point(0,0);//(x, y);
+            this.label.Location = new System.Drawing.Point(0, 0);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(20, 20);
             this.label.TabIndex = 0;
             this.label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            if (type == treType.BODY)
+            {
+                this.label.BackColor = System.Drawing.Color.LimeGreen;
+            }
+            else if (type == treType.TARGET)
+            {
+                this.label.BackColor = System.Drawing.Color.Aqua;
+            }
             // 
             // trePoint
             // 
@@ -49,7 +57,7 @@
             this.Controls.Add(this.label);
             this.Name = "trePoint";
             this.Size = new System.Drawing.Size(20, 20);
-            this.Location = new System.Drawing.Point(20, 20);
+            this.Location = new System.Drawing.Point(x, y);
             this.ResumeLayout(false);
 
         }

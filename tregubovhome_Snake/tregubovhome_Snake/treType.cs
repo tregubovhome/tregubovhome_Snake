@@ -5,7 +5,7 @@ using System.Text;
 
 namespace tregubovhome_Snake
 {
-    enum treType
+    public enum treType
     {
         BODY,
         TARGET

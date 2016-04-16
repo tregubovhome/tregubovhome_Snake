@@ -14,20 +14,19 @@ namespace tregubovhome_Snake
     {
         public int x;
         public int y;
-        //public treType type;
+        public treType type;
         public trePoint()
-        {
-            InitializeComponent();//(x, y);
-        }
-        public trePoint(int _x, int _y)//, treType _type)
+        { }
+        public trePoint(int _x, int _y, treType _type)
         {
             x = _x;
             y = _y;
-            //type = _type;
+            type = _type;
         }
-        public void Draw()
+        public void Draw(Form frm)
         {
-
+            InitializeComponent(x, y, type);
+            frm.Controls.Add(this);
         }
     }
 }
