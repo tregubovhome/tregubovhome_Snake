@@ -16,15 +16,11 @@ namespace tregubovhome_Snake
         {
             InitializeComponent();
         }
-
-        private void formGame_Load(object sender, EventArgs e)
+        private void buttonStart_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void formGame_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            
+            //MessageBox.Show(e.ToString());
+            trePoint p1 = new trePoint();//(0, 0);
+            this.Controls.Add(p1);
         }
     }
 }

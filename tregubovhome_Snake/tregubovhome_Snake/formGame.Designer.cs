@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonStart = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -41,18 +42,27 @@
             this.label1.Size = new System.Drawing.Size(658, 355);
             this.label1.TabIndex = 0;
             // 
+            // buttonStart
+            // 
+            this.buttonStart.Location = new System.Drawing.Point(566, 37);
+            this.buttonStart.Name = "buttonStart";
+            this.buttonStart.Size = new System.Drawing.Size(75, 23);
+            this.buttonStart.TabIndex = 1;
+            this.buttonStart.Text = "button1";
+            this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
+            // 
             // formGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 455);
+            this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "formGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formGame";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formGame_FormClosed);
-            this.Load += new System.EventHandler(this.formGame_Load);
             this.ResumeLayout(false);
 
         }
@@ -60,5 +70,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonStart;
     }
 }
