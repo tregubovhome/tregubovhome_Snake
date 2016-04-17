@@ -29,13 +29,14 @@ namespace tregubovhome_Snake
             y = p.y;
             type = p.type;
         }
-        public void Draw(Form frm)
+        public void Draw()
         {
-            InitializeComponent(frm.Controls.Find("labelField", true).First(), x, y, type);
-            frm.Controls.Add(this);
+            InitializeComponent(tregubovhome_Snake.Program.stngFormGame.Controls.Find("labelField", true).First(), x, y, type);
+            tregubovhome_Snake.Program.stngFormGame.Controls.Add(this);
             this.BringToFront();
+            tregubovhome_Snake.Program.stngFormGame.Refresh();
         }
-        public void Move(int offset, treDirection direction)
+        public void pMove(int offset, treDirection direction)
         {
             if (direction == treDirection.RIGHT)
             {
@@ -57,7 +58,7 @@ namespace tregubovhome_Snake
 
         internal void Clear()
         {
-
+            tregubovhome_Snake.Program.stngFormGame.Controls.Remove(this);
         }
     }
 }

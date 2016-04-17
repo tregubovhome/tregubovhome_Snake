@@ -5,12 +5,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace tregubovhome_Snake
-{
+{    
     static class Program
-    {
+    {        
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
+        public static Form stngFormGame;
+
         [STAThread]
         static void Main()
         {

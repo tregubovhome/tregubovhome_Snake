@@ -18,31 +18,33 @@ namespace tregubovhome_Snake
             for (int i = 0; i < lenght; i++)
             {
                 trePoint p = new trePoint(tail);
-                p.Move(i, direction);
+                p.pMove(i, direction);
                 pList.Add(p);
             }
         }
-        public void Draw(Form frm)
+        public void Draw()
         {
             foreach (trePoint p in pList)
             {
-                p.Draw(frm);
+                p.Draw();
             }
         }
-
-        internal void Move(Form frm)
+        internal void Move()
         {
             trePoint tail = pList.First();
             pList.Remove(tail);
-            //trePoint head = GetNextPoint();
-            //pList.Add(head);
+            trePoint head = GetNextPoint();
+            pList.Add(head);
             tail.Clear();
-            //head.Draw(frm);
+            head.Draw();
         }
 
-        /*private trePoint GetNextPoint()
+        private trePoint GetNextPoint()
         {
-            
-        }*/
+            trePoint head = pList.Last();
+            trePoint nextPoint = new trePoint(head);
+            nextPoint.pMove(1, direction);
+            return nextPoint;
+        }
     }
 }
