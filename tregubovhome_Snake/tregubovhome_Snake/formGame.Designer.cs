@@ -50,6 +50,7 @@
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(100, 76);
             this.buttonStart.TabIndex = 1;
+            this.buttonStart.TabStop = false;
             this.buttonStart.Text = "СТАРТ";
             this.buttonStart.UseVisualStyleBackColor = false;
             this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
@@ -62,9 +63,11 @@
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.labelField);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.KeyPreview = true;
             this.Name = "formGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formGame";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.formGame_KeyPress);
             this.ResumeLayout(false);
 
         }

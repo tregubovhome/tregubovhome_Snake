@@ -62,6 +62,7 @@
             this.Size = new System.Drawing.Size(20, 20);
             this.Location = new System.Drawing.Point((x - 1) * 20 + ctrlField.Location.X, (y - 1) * 20 + ctrlField.Location.Y);
             this.ResumeLayout(false);
+            this.TabStop = false;
         }
 
         #endregion

@@ -7,10 +7,10 @@ using System.Windows.Forms;
 
 namespace tregubovhome_Snake
 {
-    class treSnake
+    public class treSnake
     {
         List<trePoint> pList;
-        treDirection direction;
+        public treDirection direction;
         public treSnake(trePoint tail, int lenght, treDirection _direction)
         {
             direction = _direction;
@@ -45,6 +45,17 @@ namespace tregubovhome_Snake
             trePoint nextPoint = new trePoint(head);
             nextPoint.pMove(1, direction);
             return nextPoint;
+        }
+        public void Handle(Keys Key)
+        {
+            /*if (Key.ToString() == Keys.Left.ToString())
+            { newDirection = treDirection.LEFT; }
+            else if (e.KeyChar.ToString() == Keys.Right.ToString())
+            { newDirection = treDirection.RIGHT; }
+            else if (e.KeyChar.ToString() == Keys.Up.ToString())
+            { newDirection = treDirection.UP; }
+            else if (e.KeyChar.ToString() == Keys.Down.ToString())
+            { newDirection = treDirection.DOWN; }*/
         }
     }
 }
