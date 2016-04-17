@@ -23,12 +23,41 @@ namespace tregubovhome_Snake
             y = _y;
             type = _type;
         }
+        public trePoint(trePoint p)
+        {
+            x = p.x;
+            y = p.y;
+            type = p.type;
+        }
         public void Draw(Form frm)
         {
             InitializeComponent(frm.Controls.Find("labelField", true).First(), x, y, type);
             frm.Controls.Add(this);
             this.BringToFront();
-            //this.UpdateZOrder();
+        }
+        public void Move(int offset, treDirection direction)
+        {
+            if (direction == treDirection.RIGHT)
+            {
+                x = x + offset;
+            }
+            else if (direction == treDirection.LEFT)
+            {
+                x = x - offset;
+            }
+            else if (direction == treDirection.UP)
+            {
+                y = y - offset;
+            }
+            else if (direction == treDirection.DOWN)
+            {
+                y = y + offset;
+            }
+        }
+
+        internal void Clear()
+        {
+
         }
     }
 }

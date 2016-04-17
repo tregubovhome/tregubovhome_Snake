@@ -58,12 +58,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="treDirection.cs" />
     <Compile Include="trePoint.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="trePoint.Designer.cs">
       <DependentUpon>trePoint.cs</DependentUpon>
     </Compile>
+    <Compile Include="treSnake.cs" />
     <Compile Include="treType.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
