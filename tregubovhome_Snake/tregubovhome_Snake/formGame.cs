@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace tregubovhome_Snake
 {
+    public delegate void dlgHelper();
     public partial class formGame : Form
     {
         treDirection newDirection;
@@ -21,38 +22,42 @@ namespace tregubovhome_Snake
         }
         private void buttonStart_Click(object sender, EventArgs e)
         {
+            Thread thrGamePlay = new Thread(GamePlay);
+            thrGamePlay.Name = "thrGamePlay";
+            thrGamePlay.Start();
+            //Thread.Sleep(900);
+            //newDirection = treDirection.DOWN;
+        }
+        public void GamePlay()
+        {
             trePoint p2 = new trePoint(10, 10, treType.TARGET);
-            p2.Draw();
+            dlgHelper helper = new dlgHelper(p2.Draw);
+            Invoke(helper);
             trePoint p1 = new trePoint(3, 3, treType.BODY);
             treSnake snake = new treSnake(p1, 4, treDirection.RIGHT);
             snake.Draw();
             newDirection = snake.direction;
-            while (true)
-            { 
-                snake.direction = newDirection;
-                snake.Move();
-                Thread.Sleep(300);
-            }
-        }
-
-        /*protected override void OnKeyDown(KeyEventArgs e)
-        {
-            base.OnKeyDown(e);
-            if (e.KeyCode == Keys.Left)
-            { newDirection = treDirection.LEFT; }
-            else if (e.KeyCode == Keys.Right)
-            { newDirection = treDirection.RIGHT; }
-            else if (e.KeyCode == Keys.Up)
-            { newDirection = treDirection.UP; }
-            else if (e.KeyCode == Keys.Down)
-            { newDirection = treDirection.DOWN; }
-            if (e.KeyCode == Keys.F4 && e.Alt)
+            int i = 0;
+            while (i<7)//(true)
             {
-                MessageBox.Show("Тест");
+                /*if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    if (key.Key == ConsoleKey.LeftArrow)
+                        snake.direction = treDirection.LEFT;
+                    else if (key.Key == ConsoleKey.RightArrow)
+                        snake.direction = treDirection.RIGHT;
+                    else if (key.Key == ConsoleKey.UpArrow)
+                        snake.direction = treDirection.UP;
+                    else if (key.Key == ConsoleKey.DownArrow)
+                        snake.direction = treDirection.DOWN;
+                }*/
+                snake.direction = newDirection;
+                Thread.Sleep(300);
+                snake.Move();
+                i++;
             }
-            e.Handled = true;
-            MessageBox.Show("OnKeyDown");
-        }*/
+        }          
         private void formGame_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar.ToString().ToLower() == "a" || e.KeyChar.ToString().ToLower() == "ф")//Keys.Left.ToString())
@@ -65,17 +70,5 @@ namespace tregubovhome_Snake
             { newDirection = treDirection.DOWN; }
             MessageBox.Show("formGame_KeyPress");
         }
-
-        /*private void formGame_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Left)
-            { newDirection = treDirection.LEFT; }
-            else if (e.KeyCode == Keys.Right)
-            { newDirection = treDirection.RIGHT; }
-            else if (e.KeyCode == Keys.Up)
-            { newDirection = treDirection.UP; }
-            else if (e.KeyCode == Keys.Down)
-            { newDirection = treDirection.DOWN; }
-        }*/
     }
 }

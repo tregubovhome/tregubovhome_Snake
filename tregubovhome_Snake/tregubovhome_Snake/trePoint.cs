@@ -12,6 +12,7 @@ namespace tregubovhome_Snake
 {
     public partial class trePoint : UserControl
     {
+        
         public int x;
         public int y;
         public treType type;
@@ -55,7 +56,6 @@ namespace tregubovhome_Snake
                 y = y + offset;
             }
         }
-
         internal void Clear()
         {
             tregubovhome_Snake.Program.stngFormGame.Controls.Remove(this);

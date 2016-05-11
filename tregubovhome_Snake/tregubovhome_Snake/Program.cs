@@ -12,7 +12,7 @@ namespace tregubovhome_Snake
         /// Главная точка входа для приложения.
         /// </summary>
         public static Form stngFormGame;
-
+        
         [STAThread]
         static void Main()
         {
