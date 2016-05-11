@@ -59,5 +59,9 @@ namespace tregubovhome_Snake
         {
             tregubovhome_Snake.Program.stngFormGame.Controls.Remove(this);
         }
+        public bool IsHit(trePoint p)
+        {
+            return (this.x == p.x && this.y == p.y);
+        }
     }
 }

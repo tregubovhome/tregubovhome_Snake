@@ -38,7 +38,6 @@ namespace tregubovhome_Snake
             tail.Clear();
             head.Draw();
         }
-
         private trePoint GetNextPoint()
         {
             trePoint head = pList.Last();
@@ -46,16 +45,31 @@ namespace tregubovhome_Snake
             nextPoint.pMove(1, direction);
             return nextPoint;
         }
-        public void Handle(Keys Key)
+        public void Handle(Char Key)
         {
-            /*if (Key.ToString() == Keys.Left.ToString())
-            { newDirection = treDirection.LEFT; }
-            else if (e.KeyChar.ToString() == Keys.Right.ToString())
-            { newDirection = treDirection.RIGHT; }
-            else if (e.KeyChar.ToString() == Keys.Up.ToString())
-            { newDirection = treDirection.UP; }
-            else if (e.KeyChar.ToString() == Keys.Down.ToString())
-            { newDirection = treDirection.DOWN; }*/
+            if (Key.ToString().ToLower() == "a" || Key.ToString().ToLower() == "ф")//Keys.Left.ToString())
+            { direction = treDirection.LEFT; }
+            else if (Key.ToString().ToLower() == "d" || Key.ToString().ToLower() == "в") //Keys.Right.ToString())
+            { direction = treDirection.RIGHT; }
+            else if (Key.ToString().ToLower() == "w" || Key.ToString().ToLower() == "ц") //Keys.Up.ToString())
+            { direction = treDirection.UP; }
+            else if (Key.ToString().ToLower() == "s" || Key.ToString().ToLower() == "ы") //Keys.Down.ToString())
+            { direction = treDirection.DOWN; }
+        }
+        public bool Eat(trePoint target)
+        {
+            trePoint head = GetNextPoint();
+            if (head.IsHit(target))
+            {
+                target.type = treType.BODY;
+                target.BackColor = System.Drawing.Color.LimeGreen;
+                pList.Add(target);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
