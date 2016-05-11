@@ -31,14 +31,13 @@ namespace tregubovhome_Snake
         public void GamePlay()
         {
             trePoint p2 = new trePoint(10, 10, treType.TARGET);
-            dlgHelper helper = new dlgHelper(p2.Draw);
-            Invoke(helper);
+            Invoke(new dlgHelper(p2.Draw));
             trePoint p1 = new trePoint(3, 3, treType.BODY);
             treSnake snake = new treSnake(p1, 4, treDirection.RIGHT);
-            snake.Draw();
+            Invoke(new dlgHelper(snake.Draw));//snake.Draw();
             newDirection = snake.direction;
             int i = 0;
-            while (i<7)//(true)
+            while (true)
             {
                 /*if (Console.KeyAvailable)
                 {
@@ -53,11 +52,11 @@ namespace tregubovhome_Snake
                         snake.direction = treDirection.DOWN;
                 }*/
                 snake.direction = newDirection;
-                Thread.Sleep(300);
-                snake.Move();
+                Thread.Sleep(200);
+                Invoke(new dlgHelper(snake.Move));//snake.Move();
                 i++;
             }
-        }          
+        }
         private void formGame_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar.ToString().ToLower() == "a" || e.KeyChar.ToString().ToLower() == "ф")//Keys.Left.ToString())
@@ -68,7 +67,6 @@ namespace tregubovhome_Snake
             { newDirection = treDirection.UP; }
             else if (e.KeyChar.ToString().ToLower() == "s" || e.KeyChar.ToString().ToLower() == "ы") //Keys.Down.ToString())
             { newDirection = treDirection.DOWN; }
-            MessageBox.Show("formGame_KeyPress");
         }
     }
 }
