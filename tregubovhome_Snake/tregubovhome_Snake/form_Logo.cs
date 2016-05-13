@@ -19,6 +19,7 @@ namespace tregubovhome_Snake
         }
         private void timer_Tick(object sender, EventArgs e)
         {
+            timer.Enabled = false;
             formGame frm = new formGame();
             this.Hide();
             frm.ShowDialog();

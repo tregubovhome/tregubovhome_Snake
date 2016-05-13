@@ -9,6 +9,7 @@ namespace tregubovhome_Snake
 {
     public class Statics
     {
+        public static List<trePoint> pList;
         public static Form stngFormGame;
         public static int mapSizeX = 32;
         public static int mapSizeY = 17;
