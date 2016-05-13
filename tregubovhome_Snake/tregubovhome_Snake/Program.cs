@@ -11,14 +11,13 @@ namespace tregubovhome_Snake
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
-        public static Form stngFormGame;
         
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new form_Logo());
         }
     }
 }

@@ -12,9 +12,9 @@ namespace tregubovhome_Snake
         { }
         public trePoint Create()
         {
-            Random random = new Random();
-            int x = random.Next(1, tregubovhome_Snake.formGame.mapSizeX - 2);
-            int y = random.Next(1, tregubovhome_Snake.formGame.mapSizeY - 2);
+            Random rnd = new Random();
+            int x = rnd.Next(1, Statics.mapSizeX);
+            int y = rnd.Next(1, Statics.mapSizeY);
             trePoint target = new trePoint(x, y, treType.TARGET);
             return target;
         }

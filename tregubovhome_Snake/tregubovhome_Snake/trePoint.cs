@@ -31,10 +31,10 @@ namespace tregubovhome_Snake
         }
         public void Draw()
         {
-            InitializeComponent(tregubovhome_Snake.Program.stngFormGame.Controls.Find("labelField", true).First(), x, y, type);
-            tregubovhome_Snake.Program.stngFormGame.Controls.Add(this);
+            InitializeComponent(Statics.stngFormGame.Controls.Find("labelField", true).First(), x, y, type);
+            Statics.stngFormGame.Controls.Add(this);
             this.BringToFront();
-            tregubovhome_Snake.Program.stngFormGame.Refresh();
+            Statics.stngFormGame.Refresh();
         }
         public void pMove(int offset, treDirection direction)
         {
@@ -57,7 +57,7 @@ namespace tregubovhome_Snake
         }
         public void Clear()
         {
-            tregubovhome_Snake.Program.stngFormGame.Controls.Remove(this);
+            Statics.stngFormGame.Controls.Remove(this);
         }
         public bool IsHit(trePoint p)
         {

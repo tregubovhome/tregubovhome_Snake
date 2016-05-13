@@ -45,16 +45,15 @@ namespace tregubovhome_Snake
             nextPoint.pMove(1, direction);
             return nextPoint;
         }
-        public void Handle(Char Key)
+        public void Handle(Keys Key)
         {
-            if (Key.ToString().ToLower() == "a" || Key.ToString().ToLower() == "ф")//Keys.Left.ToString())
-            { direction = treDirection.LEFT; }
-            else if (Key.ToString().ToLower() == "d" || Key.ToString().ToLower() == "в") //Keys.Right.ToString())
-            { direction = treDirection.RIGHT; }
-            else if (Key.ToString().ToLower() == "w" || Key.ToString().ToLower() == "ц") //Keys.Up.ToString())
-            { direction = treDirection.UP; }
-            else if (Key.ToString().ToLower() == "s" || Key.ToString().ToLower() == "ы") //Keys.Down.ToString())
-            { direction = treDirection.DOWN; }
+            switch (Key)
+            {
+                case Keys.Up: if (direction != treDirection.DOWN) direction = treDirection.UP; break;
+                case Keys.Down: if (direction != treDirection.UP) direction = treDirection.DOWN; break;
+                case Keys.Left: if (direction != treDirection.RIGHT) direction = treDirection.LEFT; break;
+                case Keys.Right: if (direction != treDirection.LEFT) direction = treDirection.RIGHT; break;
+            }
         }
         public bool Eat(trePoint target)
         {

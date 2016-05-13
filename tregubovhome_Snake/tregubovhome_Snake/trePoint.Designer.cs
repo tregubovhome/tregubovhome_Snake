@@ -49,9 +49,10 @@
             this.Name = "trePoint";
             this.Size = new System.Drawing.Size(20, 20);
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Location = new System.Drawing.Point((x - 1) * 20 + ctrlField.Location.X, (y - 1) * 20 + ctrlField.Location.Y);
+            this.Location = new System.Drawing.Point((x - 1) * 20 + ctrlField.Location.X+1, (y - 1) * 20 + ctrlField.Location.Y+1);
             this.ResumeLayout(false);
             this.TabStop = false;
+            this.Enabled = false;
         }
 
         #endregion
