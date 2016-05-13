@@ -44,7 +44,7 @@
             this.labelField.BackColor = System.Drawing.SystemColors.Desktop;
             this.labelField.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelField.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelField.Location = new System.Drawing.Point(5, 120);
+            this.labelField.Location = new System.Drawing.Point(25, 140);
             this.labelField.Name = "labelField";
             this.labelField.Size = new System.Drawing.Size(642, 342);
             this.labelField.TabIndex = 0;
@@ -53,7 +53,7 @@
             // 
             this.buttonStart.BackColor = System.Drawing.Color.LimeGreen;
             this.buttonStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonStart.Location = new System.Drawing.Point(272, 7);
+            this.buttonStart.Location = new System.Drawing.Point(293, 7);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(110, 110);
             this.buttonStart.TabIndex = 0;
@@ -81,7 +81,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.Snow;
-            this.label1.Location = new System.Drawing.Point(401, 7);
+            this.label1.Location = new System.Drawing.Point(421, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(246, 40);
             this.label1.TabIndex = 2;
@@ -116,17 +116,15 @@
             // 
             // label_score
             // 
-            this.label_score.AutoSize = true;
             this.label_score.BackColor = System.Drawing.Color.Transparent;
             this.label_score.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_score.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label_score.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label_score.Location = new System.Drawing.Point(124, 61);
             this.label_score.Name = "label_score";
             this.label_score.Size = new System.Drawing.Size(69, 29);
             this.label_score.TabIndex = 2;
             this.label_score.Text = "8888";
-            this.label_score.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_score.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label3
             // 
@@ -143,24 +141,22 @@
             // 
             // label_collected
             // 
-            this.label_collected.AutoSize = true;
             this.label_collected.BackColor = System.Drawing.Color.Transparent;
             this.label_collected.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_collected.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label_collected.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label_collected.Location = new System.Drawing.Point(124, 90);
             this.label_collected.Name = "label_collected";
             this.label_collected.Size = new System.Drawing.Size(69, 29);
             this.label_collected.TabIndex = 2;
             this.label_collected.Text = "8888";
-            this.label_collected.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_collected.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // formGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(649, 464);
+            this.ClientSize = new System.Drawing.Size(689, 504);
             this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonStart);

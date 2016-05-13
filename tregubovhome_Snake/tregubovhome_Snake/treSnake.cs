@@ -69,10 +69,31 @@ namespace tregubovhome_Snake
                 return false;
             }
         }
-        public trePoint Collision()
+        public trePoint CollisionWall()
         {
             trePoint head = GetNextPoint();
             if (head.x > Statics.mapSizeX || head.x < 1 || head.y > Statics.mapSizeY || head.y < 1)
+            {
+                head.type = treType.POISON;
+                return head;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public trePoint CollisionTail()
+        {
+            trePoint head = GetNextPoint();
+            bool flag = false;
+            foreach (trePoint p in Statics.pList)
+            {
+                if (head.IsHit(p))
+                {
+                    flag = true;
+                }
+            }
+            if (flag == true)
             {
                 head.type = treType.POISON;
                 return head;
