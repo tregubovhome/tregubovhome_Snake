@@ -174,6 +174,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formGame_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.formGame_KeyDown);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formGame_MouseDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

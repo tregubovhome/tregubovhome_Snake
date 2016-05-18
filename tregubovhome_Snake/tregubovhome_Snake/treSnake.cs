@@ -48,10 +48,54 @@ namespace tregubovhome_Snake
         {
             switch (Key)
             {
-                case Keys.Up: if (direction != treDirection.DOWN) direction = treDirection.UP; break;
-                case Keys.Down: if (direction != treDirection.UP) direction = treDirection.DOWN; break;
-                case Keys.Left: if (direction != treDirection.RIGHT) direction = treDirection.LEFT; break;
-                case Keys.Right: if (direction != treDirection.LEFT) direction = treDirection.RIGHT; break;
+                case Keys.Up:
+                case Keys.NumPad8:
+                    if (direction != treDirection.DOWN) direction = treDirection.UP; break;
+                case Keys.Down:
+                case Keys.NumPad2:
+                    if (direction != treDirection.UP) direction = treDirection.DOWN; break;
+                case Keys.Left:
+                case Keys.NumPad4:
+                    if (direction != treDirection.RIGHT) direction = treDirection.LEFT; break;
+                case Keys.Right:
+                case Keys.NumPad6:
+                    if (direction != treDirection.LEFT) direction = treDirection.RIGHT; break;
+                case Keys.LButton:
+                    if (direction == treDirection.RIGHT)
+                    {
+                        direction = treDirection.UP;
+                    }
+                    else if (direction == treDirection.UP)
+                    {
+                        direction = treDirection.LEFT;
+                    }
+                    else if (direction == treDirection.LEFT)
+                    {
+                        direction = treDirection.DOWN;
+                    }
+                    else if (direction == treDirection.DOWN)
+                    {
+                        direction = treDirection.RIGHT;
+                    }
+                    break;
+                case Keys.RButton:
+                    if (direction == treDirection.RIGHT)
+                    {
+                        direction = treDirection.DOWN;
+                    }
+                    else if (direction == treDirection.DOWN)
+                    {
+                        direction = treDirection.LEFT;
+                    }
+                    else if (direction == treDirection.LEFT)
+                    {
+                        direction = treDirection.UP;
+                    }
+                    else if (direction == treDirection.UP)
+                    {
+                        direction = treDirection.RIGHT;
+                    }
+                    break;
             }
         }
         public bool Eat(trePoint target)

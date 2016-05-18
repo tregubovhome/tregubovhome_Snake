@@ -52,28 +52,34 @@ namespace tregubovhome_Snake
             while (true)
             {
                 snake.Handle(lastKey);
+                lastKey = Keys.None;
                 trePoint collisWall = snake.CollisionWall();
                 trePoint collisTail = snake.CollisionTail();
                 if (collisWall != null)
                 {
+                    System.Media.SystemSounds.Hand.Play();
                     Invoke(new dlgHelper(collisWall.Draw));
                     Invoke(new dlgHelper(GameOver));
                     thrGamePlay.Abort();
                 }
                 else if (collisTail != null)
                 {
+                    System.Media.SystemSounds.Hand.Play();
                     Invoke(new dlgHelper(collisTail.Draw));
                     Invoke(new dlgHelper(GameOver));
                     thrGamePlay.Abort();
                 }
                 else if (snake.Eat(target))
                 {
+                    System.Media.SystemSounds.Asterisk.Play();
                     Invoke(new dlgHelper(ScoreUpdate));
                     target = tc.Create();
                     Invoke(new dlgHelper(target.Draw));
                 }
                 else
                 {
+                    //System.Console.Beep(1200, 100);
+                    //System.Media.SystemSounds.Hand.Play();
                     Invoke(new dlgHelper(snake.Move));
                 }
                 Thread.Sleep(delay[speed]);
@@ -81,7 +87,7 @@ namespace tregubovhome_Snake
         }
         private void GameOver()
         {
-            DialogResult res = MessageBox.Show("Пробуем ещё раз? :)","АВАРИЯ",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            DialogResult res = MessageBox.Show("Пробуем ещё раз? :)", "АВАРИЯ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (res == DialogResult.Yes)
             {
                 Statics.pList.Clear();
@@ -131,8 +137,21 @@ namespace tregubovhome_Snake
             switch (e.KeyCode)
             {
                 case Keys.Escape:
-                    Application.Exit();
+                    if (thrGamePlay != null)
+                        thrGamePlay.Suspend();
+                    if (MessageBox.Show("Выйти?", "Snake", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        if (thrGamePlay != null)
+                            thrGamePlay.Resume();
+                        Application.Exit();
+                    }
+                    else
+                    {
+                        if (thrGamePlay != null)
+                            thrGamePlay.Resume();
+                    }
                     break;
+                case Keys.Add:
                 case Keys.Oemplus:
                     if (speed < delay.Length - 1)
                     {
@@ -141,6 +160,7 @@ namespace tregubovhome_Snake
                         this.label_delay.Text = "Задержка: " + delay[speed].ToString() + " мсек";
                     }
                     break;
+                case Keys.Subtract:
                 case Keys.OemMinus:
                     if (speed > 1)
                     {
@@ -149,11 +169,31 @@ namespace tregubovhome_Snake
                         this.label_delay.Text = "Задержка: " + delay[speed].ToString() + " мсек";
                     }
                     break;
+                case Keys.Pause:
+                    if (thrGamePlay != null)
+                    {
+                        thrGamePlay.Suspend();
+                        MessageBox.Show("           ПАУЗА\n\nOK - продолжить", "", MessageBoxButtons.OK, MessageBoxIcon.None);
+                        thrGamePlay.Resume();
+                    }
+                    break;
                 default:
                     lastKey = e.KeyCode;
                     break;
             }
             this.Focus();
+        }
+        private void formGame_MouseDown(object sender, MouseEventArgs e)
+        {
+            switch (e.Button)
+            {
+                case MouseButtons.Left:
+                    lastKey = Keys.LButton;
+                    break;
+                case MouseButtons.Right:
+                    lastKey = Keys.RButton;
+                    break;
+            }
         }
     }
 }
